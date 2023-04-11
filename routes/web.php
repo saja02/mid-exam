@@ -13,18 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('my_tickets', [TicketController::class, 'show']);
-Route::put('insert', [TicketController::class, 'store']);
-Route::get('show_ticket/{id}', [TicketController::class, 'showTicket']);
+Route::get('create_expenses', [TicketController::class, 'create_expenses']);
+Route::put('dashboard', [TicketController::class, 'dashboard']);
+Route::get('expenses/{id}', [TicketController::class, 'expenses']);
 Route::get('/', function () {
     return view('app');
 });
 //showTicket
 
-Route::get('new_ticket', function () {
-    return view('new_ticket');
+Route::get('create_expenses', function () {
+    return view('create_expenses');
 });
 
-Route::get('show_ticket', function () {
-    return view('show_ticket');
+Route::get('dashboard', function () {
+    return view('dashboard');
+});
+Route::get('expenses', function () {
+    return view('expenses');
 });
